@@ -1,4 +1,8 @@
 <?php session_start();
+//empty() : kosong
+// if (empty($_SESSION['NAMA'])) {
+//     header("location:login.php?access=failed");
+// }
 include 'koneksi.php';
 ?>
 <!DOCTYPE html>
@@ -34,6 +38,7 @@ include 'koneksi.php';
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>

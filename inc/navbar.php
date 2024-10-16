@@ -19,9 +19,13 @@
                 <div class="navbar-nav">
                     <a class="nav-link text-info" href="index.php">Dashboard</a>
                     <a class="nav-link text-info" href="?pg=user">Manage Accounts</a>
-                    <a class="nav-link text-info" href="ManageBooks.php">Manage Books</a>
+                    <a class="nav-link text-info" href="?pg=kategori">Kategori</a>
+                    <a class="nav-link text-info" href="?pg=buku">Buku</a>
+                    <a class="nav-link text-info" href="?pg=level">Level</a>
+                    <a class="nav-link text-info" href="?pg=anggota">Anggota</a>
+                    <a class="nav-link text-info" href="?pg=peminjaman">Peminjaman</a>
                 </div>
-                <a href="controller/logout.php" class="btn btn-danger btn-sm ms-auto">Log out</a>
+                <a href="keluar.php" class="btn btn-danger btn-sm ms-auto">Log out</a>
             </div>
         </div>
     </nav>
