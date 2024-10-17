@@ -8,7 +8,7 @@ $anggota = mysqli_query($koneksi, "SELECT * FROM anggota ORDER BY id DESC");
             <fieldset class="border p-3">
                 <legend class="float-none w-auto px-3">Data Anggota</legend>
                 <div class="button-action">
-                    <a href="?pg=tambah-user" type="button" class="btn text-info" style="background-color: #bee1fa;">Add</a>
+                    <a href="?pg=tambah-anggota" type="button" class="btn text-info" style="background-color: #bee1fa;">Add</a>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover mt-3">

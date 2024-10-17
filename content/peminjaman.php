@@ -46,8 +46,8 @@ $query = mysqli_query($koneksi, "SELECT anggota.nama_anggota, peminjaman.* FROM 
                                         </button>
                                     </td> -->
                                     <td>
-                                        <a href="?pg=tambah-peminjaman&edit=<?php echo $row['id'] ?>"
-                                            class="btn btn-success btn-sm">Edit
+                                        <a href="?pg=tambah-peminjaman&detail=<?php echo $row['id'] ?>"
+                                            class="btn btn-success btn-sm">Detail
 
                                         </a> |
                                         <a
