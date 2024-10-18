@@ -24,6 +24,7 @@
                     <a class="nav-link text-info" href="?pg=level">Level</a>
                     <a class="nav-link text-info" href="?pg=anggota">Anggota</a>
                     <a class="nav-link text-info" href="?pg=peminjaman">Peminjaman</a>
+                    <a class="nav-link text-info" href="?pg=pengembalian">Pengembalian</a>
                 </div>
                 <a href="keluar.php" class="btn btn-danger btn-sm ms-auto">Log out</a>
             </div>
