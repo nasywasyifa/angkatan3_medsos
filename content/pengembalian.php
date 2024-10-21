@@ -30,7 +30,7 @@ $query = mysqli_query($koneksi, "SELECT peminjaman.no_peminjaman, pengembalian.*
                                 <tr>
                                     <td><?php echo $no++ ?></td>
                                     <td><?php echo $row['no_peminjaman'] ?></td>
-                                    <td><?php echo date('status') ?></td>
+                                    <td><?php echo $row['status'] ?></td>
                                     <td><?php echo $row['denda'] ?></td>
 
                                     <!-- <td>

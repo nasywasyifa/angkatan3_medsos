@@ -23,6 +23,7 @@ if (isset($_POST['simpan'])) {
 }
 
 $id = isset($_GET['detail']) ? $_GET['detail'] : '';
+// 
 $queryPeminjam = mysqli_query(
     $koneksi,
     "SELECT anggota.nama_anggota, peminjaman.* FROM peminjaman LEFT JOIN anggota ON anggota.id = peminjaman.id_anggota WHERE peminjaman.id = '$id'"
@@ -48,7 +49,6 @@ $id_pinjam = $rowPeminjaman['id_pinjam'];
 $id_pinjam++;
 
 $kode_pinjam = "PJM/" . date('dmy') . "/" . sprintf("%03s", $id_pinjam);
-
 
 
 ?>

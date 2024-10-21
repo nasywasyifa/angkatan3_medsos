@@ -34,8 +34,7 @@ $query = mysqli_query($koneksi, "SELECT anggota.nama_anggota, peminjaman.* FROM 
                                     <td><?php echo $row['nama_anggota'] ?></td>
                                     <td><?php echo $row['no_peminjaman'] ?></td>
                                     <td><?php echo date('d-m-Y', strtotime($row['tgl_peminjaman'])) ?></td>
-                                    <td><?php echo date('d-m-Y', strtotime($row['tgl_peminjaman'])) ?></td>
-                                    <td><?php echo $row['tgl_pengembalian'] ?></td>
+                                    <td><?php echo date('d-m-Y', strtotime($row['tgl_pengembalian'])) ?></td>
                                     <td><?php echo $row['status'] ?></td>
 
                                     <!-- <td>
