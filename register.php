@@ -1,97 +1,73 @@
+<?php
+include 'koneksi.php';
+// jika button daftar di klik atau di tekan
+if (isset($_POST['daftar'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $nama_lengkap = $_POST['nama_lengkap'];
+    $nama_pengguna = $_POST['nama_pengguna'];
+
+    //masukan data ke dalam tbl user kolom kolom tbl user () dan nilainya di ambil dari inputan sesuai dengan urutan kolomnya
+    mysqli_query($koneksi, "INSERT INTO user (email, password, nama_lengkap, nama_pengguna) VALUES ('$email', '$password', '$nama_lengkap', '$nama_pengguna')");
+
+    // melempar ke halaman login
+    header("location:login.php?register=berhasil");
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="bootstrap-5/dist/css/bootstrap.min.css">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="assets/dist/css/bootstrap.min.css">
 </head>
 
 <body>
-    <div class="container text-center mt-5">
-        <div class="row">
-            <div class="col-3 mt-3">
-                <img src="logo.png" alt="gambar1" width="150">
+    <div class="wrapper">
+        <div class="container">
+            <div class="col-sm-6 mx-auto mt-5">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h5>Medsos X - Nasywa Syifa Hanifah</h5>
+                        </div>
+                        <form action="" method="POST">
+                            <div class="form-group mb-3">
+                                <label for="" class="form-label">Email</label>
+                                <input type="email" class="form-control" name="email" placeholder="Masukan email anda">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="" class="form-label">Password</label>
+                                <input type="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="" class="form-label">Nama Lengkap</label>
+                                <input type="text" class="form-control" name="nama_lengkap" placeholder="Masukan Nama Lengkap anda">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="" class="form-label">Nama Pengguna</label>
+                                <input type="text" class="form-control" name="nama_pengguna" placeholder="Masukan Nama Pengguna anda">
+                            </div>
+                            <div class="form-group mb-3">
+                                <div class="d-grid">
+                                    <button class="btn btn-primary" type="submit" name="daftar">Login</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <p>Sudah punya akun? <a style="text-decoration: none;" href="login.php" class="text-secondary">Daftar</a> </p>
+                    </div>
+                </div>
             </div>
-            <div class="col-6 text-centeer mt-5">
-                <h2>SELAMAT DATANG DI PPKD JAKPUS</h2>
-                <P>Jl. Karet Pasar Baru Barat V No.23 - Karet Tengsin Jakarta Pusat</P>
-            </div>
-            <div class="col-3 mt-3"><img src="logo.png" alt="gambar1" width="150"> </div>
-            </h1>
         </div>
-        <!-- NAVBAR -->
-        <nav class="navbar navbar-expand-lg shadow-sm sticky-top mt-5"
-            style="background-color: #bee1fa;">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navAltMarkup"
-                    data-bs-controls="navAltMarkup" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon">
-
-                    </span>
-                </button>
-                <div class="collapse navbar-collapse" id="navAltMarkup">
-                    <div class="collapse navbar-collapse">
-                        <div class="navbar-nav">
-                            <a href="home.php" class="nav-link">Home</a>
-                            <a href="#" class="nav-link">Login</a>
-                            <a href="#" class="nav-link">Departement</a>
-                        </div>
-                    </div>
-                </div>
-        </nav>
-
-        <body>
-            <div class="row justify-content-center mt-4">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Register</h3>
-                        </div>
-                        <div class="card-body text-start">
-                            <form action="" method="POST" enctype="multipart/form-data">
-                                <div class="mb-3">
-                                    <label for="" class="form-label">Name</label>
-                                    <input type="password" class="form-control" name="password">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="" class="form-label">Username</label>
-                                    <input type="password" class="form-control" name="password">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="" class="form-label">Password</label>
-                                    <input type="password" class="form-control" name="password">
-                                </div>
-                                <div class="mb-3">
-                                    <button type="submit" class="btn btn-primary">Register</button> <a href="index.php">Sudah punya akun</a>
-                                </div>
-
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <h1 class="bg-danger"></h1>
-            </h1>
-            <footer class="shadow-sm mt-5" style="background-color: #bee1fa; min-height:65px">
-                <div class="row">
-                    <div class="col-md-6 d-flex justify-content-between">
-                        <p class="text-center ps-4 pt-3"> &copyright &copy 2024 PPKD - Jakarta Pusat</p>
-                    </div>
-                    <div class="col-md-6 d-flex justify-content-end">
-                        <p class="text-center pe-3 pt-3">Privacy Policy</p>
-                    </div>
-                </div>
-            </footer>
-    </div>
-
-    </div>
-    <script src="bootstrap-5/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

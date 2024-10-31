@@ -23,8 +23,11 @@ include 'koneksi.php';
                     <div class="card-body">
                         <div class="card-title">
                             <h5>Selamat Datang di Perpus App</h5>
-                            <p>Silahkan masuk dengna akun anda</p>
+                            <p>Silahkan masuk dengan akun anda</p>
                         </div>
+                        <?php if (isset($_GET['register'])): ?>
+                            <div class="alert alert-success">Registrasi pengguna berhasil</div>
+                        <?php endif ?>
                         <form action="actionLogin.php" method="POST">
                             <div class="form-group mb-3">
                                 <label for="" class="form-label">Email</label>
@@ -42,9 +45,13 @@ include 'koneksi.php';
                         </form>
                     </div>
                 </div>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <p>Belum punya akun? <a style="text-decoration: none;" href="register.php" class="text-secondary">Buat Akun</a> </p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 </body>
 
 </html>
