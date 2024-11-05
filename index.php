@@ -1,9 +1,13 @@
-<?php session_start();
+<?php
+ob_start();
+ob_clean();
+session_start();
 //empty() : kosong
-// if (empty($_SESSION['NAMA'])) {
-//     header("location:login.php?access=failed");
-// }
+if (empty($_SESSION['NAMA'])) {
+    header("location:login.php?access=failed");
+}
 include 'koneksi.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +20,17 @@ include 'koneksi.php';
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.css" rel="stylesheet">
+    <style>
+        .cover {
+            height: 200px;
+        }
+
+        .cover img {
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -38,10 +53,29 @@ include 'koneksi.php';
 
     </div>
     <script src="assets/dist/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/dist/js/bootstrap.min.js"></script>
     <script src="assets/dist/js/moment.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <!-- summernote -->
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.js"></script>
     <script src="app.js"></script>
 
+    <script>
+        $('#summernote').summernote({
+            placeholder: 'Hello stand alone ui',
+            tabsize: 2,
+            height: 120,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+            ]
+        });
+    </script>
     <script>
         $("#id_peminjaman").change(function() {
             let no_peminjaman = $(this).find('option:selected').val();
