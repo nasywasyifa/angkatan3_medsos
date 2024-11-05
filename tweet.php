@@ -6,6 +6,8 @@ if (isset($_POST['posting'])) {
     if (!empty($_FILES['foto']['name'])) {
         $nama_foto = $_FILES['foto']['name'];
         $ukuran_foto = $_FILES['foto']['size'];
+        
+        // ubah
 
         //tipe foto, png,jpg,etc
         $ext = array('png', 'jpg', 'jpeg', 'jfif');
